@@ -1,0 +1,157 @@
+<html>
+   <head>
+   <title>Avengers </title>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script> 
+ 
+
+  </head>
+  
+  <body >
+
+
+<header class="intro-header" align="center">
+
+  <!--Navbar-->
+  
+  <!-- Intro Section -->
+  <div   style="background-image: url(https://www.wallpaperup.com/uploads/wallpapers/2016/06/24/991640/24d24526389da7b23e893cb4cc5a69bc-700.jpg);">
+    <div class="full-bg-img ">
+
+      <!---===============================================-->
+      <div class="container flex-center">
+        <div class="row pt-5 mt-3 w-100">
+          <div class="col-md-12">
+            <div class="text-center">
+              <h2 class="h1 h1-reponsive white-text font-up font-bold mb-3 wow fadeInDown" align="center" data-wow-delay="0.3s"><strong style="color:white ;"><b> Reading Records from JSON (http)</b></strong></h2>
+              <hr class="hr-light mt-4 wow fadeInDown" data-wow-delay="0.4s">
+              <h5 class="text-center font-up mb-4 white-text wow fadeInDown" align="center" data-wow-delay="0.4s"><strong style="color:white; "> </strong></h5>
+         <!--  
+              <a data-toggle="tooltip" title="Yeah ! Add Me. " href=""  color="white" outline="true" class="wow fadeInDown waves-light border border-danger " style="background-color:#E74C3C;color:white" background-color="#F39C12" data-wow-delay="0.4s"
+              mdbWavesEffect> <span class="fa fa-plus"></span>&nbsp;ADD USER&nbsp; </a> &nbsp;&nbsp;&nbsp;&nbsp;
+            <a  data-toggle="tooltip" title="To refresh sorted table " color="white" outline="true" class="wow fadeInDown waves-light border border-danger " style="background-color:#E74C3C;color:white" data-wow-delay="0.4s" 
+              mdbWavesEffect > <span class="fas fa-stroopwafel fa-spin"></span>  REFRESH &nbsp;</a>
+       -->
+
+              <!----------------------------------------  TABLE 1 -------------------------------------- TABLE 1---------------------------------------------->
+
+
+              <div class="container" style="color:rgb(167, 145, 145)">
+                
+                <table align ="center" style="background-color: black;width:60%;opacity:0.8">
+                  <thead>
+                    <br>
+                    <tr class="bg-dark">
+                      <th class="text-center"><b style="color:red"><h3>Id </h3></b></th>
+                      <th class="text-center"><b style="color:red"><h3>Name</h3></b></th>
+                  <!--    <th class="text-center">Salary</th>
+                      <th class="text-center">Department</th>
+                      <th class="text-center">Edit</th>
+                      <th class="text-center">Delete</th>-->
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let user of booksList">
+                      <td align="center" >{{user.id}}</td>
+                      <td align="center" >{{user.name}}</td>
+                    </tr>
+                    
+                  </tbody>
+                </table>
+              </div>
+              <br>
+              <br>
+              
+            </div>
+          </div>
+        </div>    
+      </div>
+    </div>
+
+      
+<!--66666666666666666666666-->
+<div >
+  
+    <h1><a class="logo navbar-brand waves-light" mdbWavesEffect href="#search"><b class="font-italic"  style="color:WHITE">Search by ID in JSON</b></a></h1>
+  
+  <nav style="color:blue">
+    <ul class="navbar-nav mr-auto">
+      
+      
+      <i id ="search" style="width:30%">
+      
+    <form #f ="ngForm"   method="get" (ngSubmit)="get()" class ="horizontal-form " style="opacity: 1.0;" class="form-inline waves-light border-0" mdbWavesEffect>
+      <div data-toggle="tooltip" title="Search from id" class="md-form mt-0 border-0" >
+        <input type="textbox"  id="searchid" [(ngModel)]="searchid" name="searchid" style ="color:white;background-color: black ; opacity: 1.0;" class= "form-control mr-sm-2 border-0"  placeholder="Search" aria-label="Search">
+      </div>
+      <div class="mt-0 border-0 " mdbWavesEffect>
+      <button type="submit" class="mt-0 border-0 " name ="Submit" style ="color:white;background-color: black  ; "><span class="fa fa-search"></span></button>
+      </div>
+    </form>
+   </i>
+   
+   <i>
+     <br>
+    <table align ="center" style="background-color: black;width:60%;opacity:0.8" >
+      <br>
+      <thead>
+        <tr class="bg-dark"*ngIf="searchid">
+          <th class="text-center"><b style="color:red"><h3>Id </h3></b></th>
+          <th class="text-center"><b style="color:red"><h3>Name</h3></b></th>
+      
+        </tr>
+      </thead>
+      <tbody *ngFor="let book1 of booksList" style="color:white">
+        <br>
+        <tr *ngIf="book1.id==searchid">
+          <td align="center" >{{book1.id}}</td>
+          <td align="center" >{{book1.name}}</td>
+        </tr>
+        
+      </tbody>
+    </table>
+
+  </i>
+   
+  </ul>
+  </nav>
+</div>
+
+
+
+
+
+
+
+
+  </div>
+
+
+</header>
+
+
+<!--//////////////////////////////////////////
+--
+
+<h1>This is India</h1>
+<ul>
+  <li *ngFor="let book1 of booksList">
+        {{book1.id}} :{{book1.name}}
+  </li>
+</ul>
+
+<h1>This is Search by Id</h1>
+
+<ul *ngFor="let book1 of booksList">
+  <li *ngIf="book1.id==1">
+         {{book1.id}} :{{book1.name}}
+  </li>
+</ul>
+-->
+</body>
+</html>
