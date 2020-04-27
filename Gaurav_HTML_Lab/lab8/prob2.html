@@ -1,0 +1,87 @@
+<! DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="height=device-height,width=device-width,userscalable=
+no" />
+<meta charset="UTF-8">
+<title>New Form Elements</title>
+</head>
+<body>
+
+<h1 align="center" style="color:red;"> Gaurav Chand Singh<h2>  
+
+<div align="center">
+<form liname="Formelements" action="index2.jsp">
+<table>
+<tr>
+<th align="left"><label for="demo">Name : </label></th>
+<td><input id ="name" name="name"  placeholder="Enter Characters Only" onkeypress="return isNumberKey(event)" required/></td>
+</tr>
+<tr>
+<th align="left"><label for="nameauto">Password : </label></th>
+<td><input id ="password" name="password" type="password" maxlength="15" autofocus required/></td>
+</tr>
+<tr>
+<th><label for="range">Phone Number : </label></th>
+<td><input id ="phonenumber" name="phonenumber" placeholder="Enter Numbers Only" required/>
+</td>
+</tr>
+<tr>
+<td><label for="search">Gender : </label></td>
+<td>
+<input type="radio" name="s-grp" value="Sales" > Male
+<input type="radio" name="s-grp" value="HR"> Female
+<input type="radio" name="s-grp" value="oth"> Others <BR> <BR> 
+<td>
+</tr>
+<tr>
+<td><label for="date">Date : </label></td>
+<td>
+<input id="date" name="date" type="date" min="2010-08-14" max="2014-08-14"
+value="" required/></td>
+</tr>
+
+<td><label for="email">Email:</label></td>
+<td><input id="email" name="email" type="email" required/></td>
+</tr>
+
+<tr>
+<td><label for="highest_qualification">Highest Qualification : </label></td>
+<td><input id="highest_qualification" name="highest_qualification" type="text" list="highest_qualification"
+/></td>
+<td><datalist id="country" value="B.Tech">
+<option value="B.Tech">
+<option value="M.Tech">
+<option value="MBA">
+<option value="MCA">
+<option value="MSc">
+<option value="MA">
+<option value="BSC..">
+</datalist></td>
+</tr>
+<tr>
+<th>Courses Interested in:</th>
+<td><input type="checkbox" name="Python" checked> Python
+<input type="checkbox" name="AI" > AI
+<input type="checkbox" name="s-java"> Java</td>
+</tr>
+<tr>
+<th>Comments(Mention External Certifications if any) :</th>
+<td><textarea name="ADDRESS" Rows="5" cols="40" tabindex="3" accesskey="A">Enter ur
+address </textarea></td>
+</tr>
+
+</table>
+<table>
+<tr>
+<td align="right"><button type="submit" name="submit"
+value="Submit">Submit</button></td>
+<td align="left"><button type="reset" name="reset"
+value="reset">Reset</button></td>
+</tr>
+</table>
+
+</form>
+</div>
+</body>
+</html>
