@@ -1,0 +1,1143 @@
+<html>
+   <head>
+   <title>Avengers </title>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script> 
+ 
+
+  </head>
+  
+  <body >
+        <!--Main Navigation------------------------  ROUTING --------------------------------
+     <div  class="nav-link">
+      <a [routerLink] ="['/ProductListAll']">All</a> &nbsp;
+      <a [routerLink] ="['/ProductList',102]">Product List</a>&nbsp;
+    
+      <a [routerLink] ="['/ContactUs']">ContactUs</a>
+      <router-outlet></router-outlet>
+    </div>
+  -->
+
+    <header class="intro-header">
+
+      <!--Navbar-->
+      <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
+        <nav>
+          <a class="logo navbar-brand waves-light" mdbWavesEffect href="#"><strong class="font-italic">Garv</strong></a>
+        </nav>
+        <nav style="color:blue">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active waves-light" mdbWavesEffect>
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item" mdbWavesEffect>
+              <a class="nav-link" [routerLink] ="['/ProductListAll']" style="color:white">Movie Genres</a>
+            </li>
+            
+            <li class="nav-item" mdbWavesEffect>
+              <a class="nav-link" [routerLink] ="['/ProductList',102]" style="color:white">Single Book</a>
+            </li><!--
+            <li class="nav-item" mdbWavesEffect>
+              <a class="nav-link" [routerLink] ="['/ContactUs']" style="color:white">Contact Us</a>
+            </li>-->
+            <router-outlet></router-outlet>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <li >
+            <!----<div class="mt-0 border-0" >
+              <span class=" mr-sm-2 border-0" style ="color:white;background-color: black ; opacity: 0.7;" 
+              (keyup)="changeValue( $event)" (blur)="updateRouteValue($event)" contenteditable="true">{{searchid}}</span>
+            </div>       
+          -->
+          <form #f ="ngForm"   method="get" (ngSubmit)="updateRouteValue()" class ="horizontal-form " style="opacity: 1.0;" class="form-inline waves-light border-0" mdbWavesEffect>
+            <div data-toggle="tooltip" title="Search from id" class="md-form mt-0 border-0" >
+              <input type="textbox"  id="searchid" [(ngModel)]="searchid" name="searchid" style ="color:white;background-color: black ; opacity: 1.0;" class= "form-control mr-sm-2 border-0"  placeholder="Search Movie" aria-label="Search">
+            </div>
+            <div class="mt-0 border-0 " mdbWavesEffect>
+            <button type="submit" class="mt-0 border-0 " name ="Submit" style ="color:white;background-color: black  ; "><span class="fa fa-search"></span></button>
+            </div>
+          </form>
+         </li>
+        <!-- <li class="nav-item waves-light" mdbWavesEffect>
+          <a class="nav-link" [routerLink] ="['/ProductList',{{searchid}}]"><span class="fa fa-check"></span></a>
+        </li>
+         -->
+        </ul>
+        </nav>
+      </nav>
+    
+      <!-- Intro Section -->
+      <div   style="background-image: url(https://www.wallpaperup.com/uploads/wallpapers/2016/06/24/991640/24d24526389da7b23e893cb4cc5a69bc-700.jpg);">
+        <div class="full-bg-img ">
+          <div class="container flex-center">
+            <div class="row pt-5 mt-3 w-100">
+              <div class="col-md-12">
+                <div class="text-center">
+                  <h2 class="h1 h1-reponsive white-text font-up font-bold mb-3 wow fadeInDown" data-wow-delay="0.3s"><strong style="color:white ;background-color:#424949;opacity:0.8"> Movie App </strong></h2>
+                  <hr class="hr-light mt-4 wow fadeInDown" data-wow-delay="0.4s">
+                  <h5 class="font-up mb-4 white-text wow fadeInDown" data-wow-delay="0.4s"><strong style="color:white; "> All Movie Records (Garv)</strong></h5>
+               
+                  <a data-toggle="tooltip" title="Yeah ! Add Me. " href="#addUser"  color="white" outline="true" class="wow fadeInDown waves-light border border-danger " style="background-color:#E74C3C;color:white" background-color="#F39C12" data-wow-delay="0.4s"
+                  mdbWavesEffect> <span class="fa fa-plus"></span>&nbsp;ADD Movie&nbsp; </a> &nbsp;&nbsp;&nbsp;&nbsp;
+                <a  data-toggle="tooltip" title="To refresh sorted table " color="white" outline="true" class="wow fadeInDown waves-light border border-danger " style="background-color:#E74C3C;color:white" data-wow-delay="0.4s" (click)="ngOnInit()"
+                  mdbWavesEffect > <span class="fas fa-stroopwafel fa-spin"></span>  REFRESH &nbsp;</a>&nbsp;&nbsp;&nbsp;&nbsp;
+
+                  <a data-toggle="tooltip" title="Yeah ! Add Me. " href="#addUser"  color="white" outline="true" class="wow fadeInDown waves-light border border-danger " style="background-color:#E74C3C;color:white" background-color="#F39C12" data-wow-delay="0.4s"
+                  mdbWavesEffect> <span class="fa fa-plus"></span>&nbsp;Update Movie&nbsp; </a> &nbsp;&nbsp;&nbsp;&nbsp;
+                  
+
+                  <!----------------------------------------  TABLE 1 -------------------------------------- TABLE 1---------------------------------------------->
+
+
+                  <div class="container" >
+                    <h3 class="card-header text-center font-weight-bold text-uppercase py-4"><span class="text-white bg-#E5E7E9">Edit Movie Details through Cells</span></h3>
+                    
+                    <table class="table table-bordered text-white table-responsive-md table-striped text-center" style="opacity: 0.8;">
+                      <tr class="bg-dark">
+                        <th class="text-center ">Movie Id </th>
+                        <th class="text-center ">Movie Name</th>
+                        <th class="text-center ">Movie Genre</th>
+                        <th class="text-center">Movie Rating</th>
+                        <th class="text-center">Edit</th>
+                        <th class="text-center">Delete</th>
+                      </tr>
+                      <tr *ngFor="let person of empdata; let id = index" >
+                        <td>
+                          <span (keyup)="changeValue( $event)" (blur)="updateList(id, 'eid', $event)" contenteditable="true">{{person.eid}}</span>
+                        </td>
+                        <td>
+                          <span contenteditable="true" (keyup)="changeValue( $event)" (blur)="updateList(id, 'ename', $event)">{{person.ename}}</span>
+                        </td>
+                        <td>
+                          <span contenteditable="true" (keyup)="changeValue( $event)" (blur)="updateList(id, 'esal', $event)">{{person.esal}}</span>
+                        </td>
+                        <td>
+                          <span contenteditable="true" (keyup)="changeValue( $event)" (blur)="updateList(id, 'edept', $event)">{{person.edept}}</span>
+                        </td>
+                        <td>
+                        <--- Go to Cells  
+                        </td>
+                        <td>
+                          <span class="table-remove">
+                            <button type="button" class="btn btn-danger btn-rounded btn-sm my-0" (click)="removeEmp(person)">Remove</button>
+                          </span>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+
+      
+   <!----------------------------------------  TABLE 2 -------------------------------------- TABLE 2---------------------------------------------->
+
+<div class="container" >
+  <h3 class="card-header text-center font-weight-bold text-uppercase py-4"><span class="text-white ">Edit Emp through Edit Button (Garv)</span></h3>
+  
+  <table class="table text-white table-bordered table-responsive-md table-striped text-center">
+    <thead>
+      <tr class="bg-dark"><th class="text-center ">Movie Id </th>
+        <th class="text-center ">Movie Name</th>
+        <th class="text-center ">Movie Genre</th>
+        <th class="text-center">Movie Rating</th>
+        <th class="text-center">Edit</th>
+        <th class="text-center">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of empdata">
+        <td class="pt-3-half" contenteditable="true">{{user.eid}}</td>
+        <td class="pt-3-half" contenteditable="true">{{user.ename}}</td>
+        <td class="pt-3-half" contenteditable="true">{{user.esal}}</td>
+        <td class="pt-3-half" contenteditable="true">{{user.edept}}</td>
+          <!--<td class="pt-3-half">
+          <span class="table-up"><a href="#!" class="indigo-text"><i class="fas fa-long-arrow-alt-up"
+                aria-hidden="true"></i></a></span>
+          <span class="table-down"><a href="#!" class="indigo-text"><i class="fas fa-long-arrow-alt-down"
+                aria-hidden="true"></i></a></span>
+        </td>-->
+        <td>
+          <span class="table-remove"><a><button type="button"
+              class="btn btn-danger btn-rounded btn-sm my-0" (click)="editButtonEmp(user)">
+               Edit
+              </button></a></span>
+        </td>
+        <td>
+              <span class="table-remove"><button type="button" (click)="removeEmp(user)"
+              class="btn btn-danger btn-rounded btn-sm my-0">Delete</button></span>
+        </td>
+      </tr>
+      
+    </tbody>
+  </table>
+</div>
+<br>
+<br>
+
+<!-- Lab 1.1 ->
+
+<div class="container" >
+  <h3 class="card-header text-center font-weight-bold text-uppercase py-4"><span class="text-white ">Mobile Data Lab1.1 (Garv)</span></h3>
+  
+  <table class="table text-white table-bordered table-responsive-md table-striped text-center">
+    <thead>
+      <tr class="bg-dark">
+        <th class="text-center">Id </th>
+        <th class="text-center">Name</th>
+        <th class="text-center">Cost</th>
+        <th class="text-center">Type</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of lab1o1data">
+        <td class="pt-3-half" contenteditable="true">{{user.id}}</td>
+        <td class="pt-3-half" contenteditable="true">{{user.name}}</td>
+        <td class="pt-3-half" contenteditable="true">{{user.cost}}</td>
+        <td class="pt-3-half" contenteditable="true">{{user.type}}</td>
+          <!--<td class="pt-3-half">
+          <span class="table-up"><a href="#!" class="indigo-text"><i class="fas fa-long-arrow-alt-up"
+                aria-hidden="true"></i></a></span>
+          <span class="table-down"><a href="#!" class="indigo-text"><i class="fas fa-long-arrow-alt-down"
+                aria-hidden="true"></i></a></span>
+        </td>->
+       
+      </tr>
+      
+    </tbody>
+  </table>
+</div>->
+<br>
+<br>-->
+ 
+
+<!--- Lab1.1 ends -->
+  <!----------------------------------------  TABLE CELL EDIT WITH BACKGROUND WHITE AND OPACITY ------------------------------------------------------------------------------------>
+
+                    <div class="container  h-100">
+               
+    <!---------------------------------------------------------  EDIT FORM  ie EDIT THROUGH BUTTON -------------------------------------->                
+    <div class="container">  
+      <div class="container " id="editUser" name="addUser" >  
+          <div class="row h-100 justify-content-center align-items-center">
+            <div class="col-10 col-md-8 col-lg-6">
+              <h3 class="card-header text-center font-weight-bold text-uppercase py-4 text-white" >Edit Movie through Button (Garv)</h3>
+              <br>
+          <form #f ="ngForm"   method="get" (ngSubmit)="editThroughButton()" class ="horizontal-form bg-light" style="opacity: 0.8;">
+            <br>
+            <div class="form-group">
+              <label class ="control-label col-sm-12 " for="name" ><b>Movie Name :</b> </label>
+              <div class="col-sm-6">
+                <input type="textbox" class="form-control" id="editName" [(ngModel)]="editName" placeholder="Enter name" name="editName">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class ="control-label col-sm-6" for="id" ><b>Movie ID :</b></label>
+              <div class="col-sm-6">
+                <input type="textbox" class="form-control" id="editEid" [(ngModel)]="editEid" placeholder="Enter id" name="editEid">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class ="control-label col-sm-6" for="sal" ><b>Movie Ratings:</b></label>
+              <div class="col-sm-6">
+                <input type="textbox" class="form-control" id="editSal" [(ngModel)]="editSal" placeholder="Enter salary" name="editSal">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class ="control-label col-sm-6" for="hra" ><b>Movie Genre</b></label>
+              <div class="col-sm-6">
+                <input type="textbox" class="form-control" id="editDept" [(ngModel)]="editDept" placeholder="Enter  Department" name="editDept">
+              </div>
+            </div>
+            
+            <button type="submit" class="btn btn-primary" name ="Submit">Submit</button>
+          </form>
+          <br>
+          <br>
+        </div>
+      </div>
+    </div>
+    
+  </div>       
+  
+  <!--   ENDS : EDIT FORM through Buttons ENDS-------------------------------------------------------------------------->
+
+
+
+
+
+
+              <!-- Editable table --><div class="card" style="opacity:0.7">
+                <h3 class="card-header text-center font-weight-bold text-uppercase py-4">Movie Records (Garv)</h3>
+               
+                  <!-- Editable table --><div class="card">
+                   
+                    <!-- Editable table -->
+                    <div class="card">
+                     
+                      <div class="card-body">
+                        <div id="table" class="table-editable">
+                          <span class="table-add float-right mb-3 mr-2">
+                            <a href="#addUser" class="text-success" >
+                              <span class="fa fa-plus"></span> ADD USER
+                            </a>
+                          </span>
+                          <table class="table table-bordered table-responsive-md table-striped text-center">
+                            <tr>
+                              <th class="text-center">Id </th>
+                              <th class="text-center">Name</th>
+                              <th class="text-center">Salary</th>
+                              <th class="text-center">Department</th>
+                              <th class="text-center">Edit</th>
+                              <th class="text-center">Delete</th>
+                            </tr>
+                            <tr *ngFor="let person of empdata; let id = index">
+                              <td>
+                                <span (keyup)="changeValue( $event)" (blur)="updateList(id, 'eid', $event)" contenteditable="true">{{person.eid}}</span>
+                              </td>
+                              <td>
+                                <span contenteditable="true" (keyup)="changeValue( $event)" (blur)="updateList(id, 'ename', $event)">{{person.ename}}</span>
+                              </td>
+                              <td>
+                                <span contenteditable="true" (keyup)="changeValue( $event)" (blur)="updateList(id, 'esal', $event)">{{person.esal}}</span>
+                              </td>
+                              <td>
+                                <span contenteditable="true" (keyup)="changeValue( $event)" (blur)="updateList(id, 'edept', $event)">{{person.edept}}</span>
+                              </td>
+                              <td>
+                              <-- Go to cells 
+                              </td>
+                              <td>
+                                <span class="table-remove">
+                                  <button type="button" mdbBtn color="danger" rounded="true" size="sm" class="btn btn-danger btn-rounded btn-sm my-0" (click)="remove(id)">Remove</button>
+                                </span>
+                              </td>
+                            </tr>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!----------------------------------------  Inside Opacity : Sort Accordingly Table------------------------------------------------------------------------------------>
+              <div class="container">
+                      <div class="card-body">
+                        <div id="table" class="table-editable">
+                          <!--
+                          <span class="table-add float-right mb-3 mr-2"><a href="#!" class="text-success"><i
+                                class="fas fa-plus fa-2x" aria-hidden="true"></i></a></span>-->
+                         
+                        </div>
+                      </div>
+                    </div>
+
+                <!----Sort.sjcbakbckabchca SORT-->
+
+
+
+
+                <!-- Editable table -->
+                <div class="card">
+                  <h3 class="card-header text-center font-weight-bold text-uppercase py-4">Sort Movie Details Accordingly (Garv)</h3>
+                  <div class="card-body">
+                    <div id="table" class="table-editable">
+                      <span class="table-add float-right mb-3 mr-2">
+                        <a href="#addUser" class="text-success" (click)="ngOnInit()">
+                          <span class="fas fa-stroopwafel fa-spin"></span> Refresh
+                        </a>
+                      </span>
+                      <table id ="tableSortExample" class="table table-bordered table-responsive-md table-striped text-center" style="opacity:0.7">
+                        <thead>
+                
+                          <th *ngFor="let head of headElements; let i = index" aria-controls="tableSortExample"
+                           scope="col" [mdbTableSort]="elements" [sortBy]="headElements[i]">{{head | titlecase}}
+                            <mdb-icon fas icon="sort"></mdb-icon>
+                          </th>  
+                           </thead>
+              
+                        <tr *ngFor="let el of elements; let i = index">
+                          <th scope="row">{{el.id}}</th>
+                          <td>{{el.eid}}</td>
+                          <td>{{el.ename}}</td>
+                          <td>{{el.esal}}</td>
+                          <td>{{el.edept}}</td>
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+               
+            </div>
+
+
+
+  <!----------------------------------------  TABLE Sorted Outside Sort ------------------------------------------------------------------------------------>
+                    <br><br>
+
+                    <div class="container" >
+
+                      <h3 class="card-header text-center font-weight-bold text-uppercase py-4"><span class="text-white ">Sort Accordingly (Garv)</span></h3>
+                      
+                      <table id ="tableSortExample" class="table text-white table-bordered table-responsive-md table-striped text-center" >
+                        <thead class= "bg-dark" style="opacity: 0.8;">
+                
+                          <th  *ngFor="let head of headElements; let i = index" aria-controls="tableSortExample"
+                           scope="col" [mdbTableSort]="elements" [sortBy]="headElements[i]">{{head | titlecase}}
+                            <mdb-icon fas icon="sort"></mdb-icon>
+                          </th>  
+                
+                <!--          <th class="text-center" *ngFor="let head of headElements; let i = index" aria-controls="tableSortExample"
+                          scope="col" [mdbTableSort]="elements" [sortBy]="headElements[i]">{{head | titlecase}}
+                        <span class="fas fa-sort"></span>
+                        </th>-->
+                
+                        </thead>
+
+                        <tr *ngFor="let el of elements; let i = index">
+                          <th scope="row">{{el.id}}</th>
+                          <td>{{el.eid}}</td>
+                          <td>{{el.ename}}</td>
+                          <td>{{el.esal}}</td>
+                          <td>{{el.edept}}</td>
+                        </tr>
+                      </table>
+
+                    </div>
+                    <br>
+                    <br><br><br>
+<!---------------------------------------------------------------------------------------FORM -ADD ----------------------------------------------------       -->
+                <div class="container " id="addUser" name="addUser" >  
+                    <div class="row h-100 justify-content-center align-items-center">
+                      <div class="col-10 col-md-8 col-lg-6">
+                    <h2> <strong class="text-white" >Add Movie Details (Garv)</strong> <i class="fa fa-hand-o-left" style="font-size:48px;color:red"></i> </h2>
+                    <br>
+                    <form #f ="ngForm"   method="get" (ngSubmit)="addEmp()" class ="horizontal-form bg-light" style="opacity: 0.8;">
+                      <br>
+                      <div class="form-group">
+                        <label class ="control-label col-sm-12 " for="name" ><b>Movie Name :</b> </label>
+                        <div class="col-sm-6">
+                          <input type="textbox" class="form-control" id="ename" [(ngModel)]="ename" placeholder="Enter name" name="ename">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class ="control-label col-sm-6" for="id" ><b>Movie ID :</b></label>
+                        <div class="col-sm-6">
+                          <input type="textbox" class="form-control" id="eid" [(ngModel)]="eid" placeholder="Enter id" name="eid">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class ="control-label col-sm-6" for="sal" ><b>Movie Ratings:</b></label>
+                        <div class="col-sm-6">
+                          <input type="textbox" class="form-control" id="sal" [(ngModel)]="esal" placeholder="Enter salary" name="esal">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class ="control-label col-sm-6" for="hra" ><b>Movie Genre:</b></label>
+                        <div class="col-sm-6">
+                          <input type="textbox" class="form-control" id="dept" [(ngModel)]="edept" placeholder="Enter  Department" name="edept">
+                        </div>
+                      </div>
+                      
+                      <button type="submit" class="btn btn-primary" name ="Submit">Submit</button>
+                    </form>
+                    <br>
+                    <br>
+                  </div>
+                </div>
+              </div>
+              
+
+
+
+            
+               </div>
+              
+              
+<!--341833311553333333333333333333333333333333333333333333333333333333333333333333333333333333333333333
+42158444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444-->              
+       </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </header>
+
+    <!--   JSON -----------------------------------------------------------------------------------
+    <div class="container bg-white text-dark h-100 justify-content-center align-items-center" >
+      <h1 class="font-italic">Product Data read from JSON</h1>
+      <br>
+      <table class ="table table-hover  col-sm-5">
+          <thead>
+              <th>Book Id</th>
+              <th>Book Name</th>
+          </thead>
+          <tbody>
+              <tr *ngFor="let product of booksList">
+                  <td>{{product.id}}</td>
+                  <td>{{product.name}}</td>
+              </tr>
+          </tbody>
+      </table>
+    </div>
+  
+  /********************************************************************************************************
+  
+  /********************************************************************************************************
+  
+  /********************************************************************************************************
+  
+                                 Previous Labs Starts 
+  
+  /********************************************************************************************************
+  
+  /********************************************************************************************************
+  
+  /********************************************************************************************************
+  
+  
+  -->
+<!--
+
+--------------------------Child to parent data sending @output-----------------------------------------------
+
+  <h1 class="border border-success" style="border-width: 1px;background-color:#2ECC71 ;">--------------------------- THE UNIVERSE IS AWESOME ----------------------</h1>
+
+  <div class="container">
+    <form class="horizontal-form" #f1="ngForm" (ngSubmit)="addcont()">
+      <b>Enter Country Name :</b> <input type="text" class="form-control col-sm-4" [(ngModel)]="name1" placeholder ="Eg. Tunisia" name="name1">
+      <br><input type="submit" name="Submit" class="btn btn-info col-sm-2" value="Click">
+    </form>
+  
+  </div>
+  <br>
+<app-child (outputObj)='displayName($event)'></app-child>
+-->
+<!-- 
+
+  --------------------------- Normal form showing 2 way data binding --------------------------
+
+<div class="container">
+  <h2>Your form !! <i class="fa fa-hand-o-left" style="font-size:48px;color:red"></i> Please enter your details.</h2>
+  <form #f ="ngForm"   method="get" (ngSubmit)="test()" class ="horizontal-form">
+    <div class="form-group">
+      <label class ="control-label col-sm-2" for="name" > Name :</label>
+      <div class="col-sm-6">
+      	<input type="textbox" class="form-control" id="name" [(ngModel)]="name" placeholder="Enter your name" name="name">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class ="control-label col-sm-2" for="id" >ID :</label>
+      <div class="col-sm-6">
+      	<input type="textbox" class="form-control" id="eid" [(ngModel)]="eid" placeholder="Enter  your id" name="eid">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class ="control-label col-sm-2" for="sal" >Basic Sal:</label>
+      <div class="col-sm-6">
+      	<input type="textbox" class="form-control" id="sal" [(ngModel)]="sal" placeholder="Enter salary" name="sal">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class ="control-label col-sm-2" for="hra" >HRA:</label>
+      <div class="col-sm-6">
+      	<input type="textbox" class="form-control" id="hra" [(ngModel)]="hra" placeholder="Enter  hra" name="hra">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class ="control-label col-sm-2" for="DA" > DA:</label>
+      <div class="col-sm-6">
+      	<input type="textbox" class="form-control" id="DA" [(ngModel)]="DA" placeholder="Enter  DA" name="DA">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class ="control-label col-sm-2" for="ded" > Deductions:</label>
+      <div class="col-sm-6">
+      	<input type="textbox" class="form-control" id="ded" [(ngModel)]="ded" placeholder="Enter  deductions" name="ded">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class ="control-label col-sm-2" for="tax" > TAX :</label>
+      <div class="col-sm-6">
+      	<input type="textbox" class="form-control" id="tax" [(ngModel)]="tax" placeholder="Enter  you id" name="tax">
+      </div>
+    </div>
+    <div class="form-group form-check">
+      <label class="form-check-label">
+        <input class="form-check-input" type="checkbox" name="remember"> Remember me
+      </label>
+    </div>
+    <button type="submit" class="btn btn-primary" name ="Submit">Submit</button>
+  </form>
+</div>
+
+------------------------------------------Template Form : for DataValidation in html ie at client site-----------------------------------
+--> 
+<!--
+<div class="container">
+
+ <h2>Your form !! <i class="fa fa-hand-o-left" style="font-size:48px;color:red"></i> Product Details (Garv)</h2>
+  <form #f1 ="ngForm"   method="get" (ngSubmit)="test1()" class ="horizontal-form">
+    <div class="form-group">
+      <label class ="control-label col-sm-2" for="id1" > ID :</label>
+      <div class="col-sm-6">
+      	<input type="text" class="form-control" id="id1" [(ngModel)]="id1" placeholder="Enter your id" name="id1" #uid1="ngModel" required minlength="4">
+      </div>
+    </div>
+
+    <div *ngIf="f1.submitted && uid1.invalid">
+      <div *ngIf="uid1.errors.required">Id is required</div>
+    </div>    
+    <div *ngIf="f1.submitted && uid1.invalid">
+      <div *ngIf="uid1.errors.minlength">Id is atleast of length 4</div>
+    </div>
+    <button type="submit" class="btn btn-primary" name ="Submit">Submit</button>
+  </form> 
+</div>
+
+
+
+
+
+              
+              
+
+              <div class="container " id="addUser" name="addUser" >  
+                <div class="row h-100 justify-content-center align-items-center">
+                  <div class="col-10 col-md-8 col-lg-6">
+                <h2> <strong class="text-white" >Product Details (Garv)</strong> <i class="fa fa-hand-o-left" style="font-size:48px;color:red"></i> </h2>
+                <br>
+                <form #f ="ngForm"   method="get" (ngSubmit)="addEmp()" class ="horizontal-form bg-light" style="opacity: 0.8;">
+                  <br>
+                  <div class="form-group">
+                    <label class ="control-label col-sm-12 " for="name" ><b> Prod Name :</b> </label>
+                    <div class="col-sm-6">
+                      <input type="textbox" class="form-control" id="ename"  placeholder="Enter name" name="ename">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class ="control-label col-sm-6" for="id" ><b>Prod ID :</b></label>
+                    <div class="col-sm-6">
+                      <input type="textbox" class="form-control" id="eid"  placeholder="Enter id" name="eid">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class ="control-label col-sm-6" for="sal" ><b>Prod Cost:</b></label>
+                    <div class="col-sm-6">
+                      <input type="textbox" class="form-control" id="sal"  placeholder="Enter salary" name="esal">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class ="control-label col-sm-6" for="hra" ><b>Product Category:</b></label>
+                    <div class="col-sm-6">
+                      <input type="textbox" class="form-control" id="dept"  placeholder="Enter  Department" name="edept">
+                    </div>
+                  </div>
+                  
+                  <button type="submit" class="btn btn-primary" name ="Submit">Submit</button>
+                </form>
+                <br>
+                <br>
+              </div>
+            </div>
+          </div>
+
+
+
+-->
+<!--
+        ------------------ Normal Form --2 way databinding ---
+<h1>All details are in here also</h1>
+<p>Name = {{name}}</p>
+<p>Id = {{eid}}</p>
+
+<p>Sal = {{sal}}</p>
+<p>HRA = {{hra}}</p>
+<p>DA = {{DA}}</p>
+<p>TAX = {{tax}}</p>
+
+<p>Deductions = {{ded}}</p>
+
+<p>Gross Salary= {{gs}}</p>
+-->
+
+
+<!--
+      <div class="row h-100 justify-content-center align-items-center">
+        <div class="col-10 col-md-8 col-lg-6">
+      <h2> <B>Employee Management <i class="fa fa-hand-o-left" style="font-size:48px;color:red"></i></B> </h2>
+      <form #f ="ngForm"   method="get" (ngSubmit)="addEmp()" class ="horizontal-form">
+        <div class="form-group">
+          <label class ="control-label col-sm-2" for="name" > Name :</label>
+          <div class="col-sm-6">
+            <input type="textbox" class="form-control" id="ename" [(ngModel)]="ename" placeholder="Enter name" name="ename">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class ="control-label col-sm-2" for="id" >ID :</label>
+          <div class="col-sm-6">
+            <input type="textbox" class="form-control" id="eid" [(ngModel)]="eid" placeholder="Enter id" name="eid">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class ="control-label col-sm-4" for="sal" >Basic Sal:</label>
+          <div class="col-sm-6">
+            <input type="textbox" class="form-control" id="sal" [(ngModel)]="esal" placeholder="Enter salary" name="esal">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class ="control-label col-sm-2" for="hra" >Department:</label>
+          <div class="col-sm-6">
+            <input type="textbox" class="form-control" id="dept" [(ngModel)]="edept" placeholder="Enter  Department" name="edept">
+          </div>
+        </div>
+        
+        <button type="submit" class="btn btn-primary" name ="Submit">Submit</button>
+      </form>
+    </div>
+  </div>
+  </div>-->
+<!-- Editable table <div class="card">
+  <h3 class="card-header text-center font-weight-bold text-uppercase py-4">Employee Records</h3>
+  <div class="card-body">
+    <div id="table" class="table-editable">-->
+<!--
+      <span class="table-add float-right mb-3 mr-2"><a href="#!" class="text-success"><i
+            class="fas fa-plus fa-2x" aria-hidden="true"></i></a></span>-->
+    <!--  <table class="table table-bordered table-responsive-md table-striped text-center">
+        <thead>
+          <tr>
+            <th class="text-center">Id </th>
+            <th class="text-center">Name</th>
+            <th class="text-center">Salary</th>
+            <th class="text-center">Department</th>
+            <th class="text-center">Edit</th>
+            <th class="text-center">Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of empdata">
+            <td class="pt-3-half" contenteditable="true">{{user.eid}}</td>
+            <td class="pt-3-half" contenteditable="true">{{user.ename}}</td>
+            <td class="pt-3-half" contenteditable="true">{{user.esal}}</td>
+            <td class="pt-3-half" contenteditable="true">{{user.edept}}</td>
+          -->   <!-- <td class="pt-3-half">
+              <span class="table-up"><a href="#!" class="indigo-text"><i class="fas fa-long-arrow-alt-up"
+                    aria-hidden="true"></i></a></span>
+              <span class="table-down"><a href="#!" class="indigo-text"><i class="fas fa-long-arrow-alt-down"
+                    aria-hidden="true"></i></a></span>
+            </td>-->
+           <!-- <td>
+              <span class="table-remove"><a href="app.editEmp.html" >THis </a><button type="button"
+                  class="btn btn-danger btn-rounded btn-sm my-0">Edit</button></span>
+            </td>
+            <td>
+                  <span class="table-remove"><button type="button" (click)="removeEmp(user)"
+                  class="btn btn-danger btn-rounded btn-sm my-0">Delete</button></span>
+            </td>
+          </tr>
+          
+        </tbody>
+      </table>
+    </div>
+  </div>-->
+<!--</div>
+-->
+<!--  BuiltIn directives -----------------------------------------------------------
+
+<h1 appHighlight class="col-sm-5 offset-2"> The colour of life : The TRICOLOR</h1>
+
+
+Pipelining that is to change the styling of a context
+
+
+-->
+<!--  BuiltIn directives -----------------------------------------------------------
+
+<h1 appHighlight class="col-sm-5 offset-2"> The colour of life : The TRICOLOR</h1>
+
+
+Pipelining that is to change the styling of a context
+
+
+
+-->
+
+      
+      
+      <!-- <br>
+        <h2 class="col-sm-8 offset-2" style="background-color: cyan;" >
+          {{emsg}}</h2><br>
+        <h2  class="col-sm-8 offset-2"  style="background-color:orange;">{{emsg|reverseString}} </h2>
+     
+
+        <p>{{emsg | lowercase}}</p>
+        <p>{{ename | uppercase}}</p>
+        <p>{{data |currency :"USD"}}</p>-->
+        <!-- Editable table -->
+        <!--  //////////////////////////////////////////Services/////////////////////////////////////////////
+        <h2 class="col-sm-8 offset-2" style="background-color: cyan;" >This is coming out to be interesting....</h2>
+        <form class="form-horizontal" #f1="ngForm" (ngSubmit)="displayData()">
+          <b>Enter Country Name :</b> <input type="text" class="form-control col-sm-4" [(ngModel)]="name" placeholder ="Eg. Tunisia" name="name">
+          <br><input type="submit" name="Submit" class="btn btn-info col-sm-2" value="Click">
+        </form>
+
+      --->
+
+
+
+
+<!--
+
+--------------------------Child to parent data sending @output-----------------------------------------------
+
+  <h1 class="border border-success" style="border-width: 1px;background-color:#2ECC71 ;">--------------------------- THE UNIVERSE IS AWESOME ----------------------</h1>
+
+  <div class="container">
+    <form class="horizontal-form" #f1="ngForm" (ngSubmit)="addcont()">
+      <b>Enter Country Name :</b> <input type="text" class="form-control col-sm-4" [(ngModel)]="name1" placeholder ="Eg. Tunisia" name="name1">
+      <br><input type="submit" name="Submit" class="btn btn-info col-sm-2" value="Click">
+    </form>
+  
+  </div>
+  <br>
+<app-child (outputObj)='displayName($event)'></app-child>
+-->
+<!-- 
+
+  --------------------------- Normal form showing 2 way data binding --------------------------
+
+<div class="container">
+  <h2>Your form !! <i class="fa fa-hand-o-left" style="font-size:48px;color:red"></i> Please enter your details.</h2>
+  <form #f ="ngForm"   method="get" (ngSubmit)="test()" class ="horizontal-form">
+    <div class="form-group">
+      <label class ="control-label col-sm-2" for="name" > Name :</label>
+      <div class="col-sm-6">
+      	<input type="textbox" class="form-control" id="name" [(ngModel)]="name" placeholder="Enter your name" name="name">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class ="control-label col-sm-2" for="id" >ID :</label>
+      <div class="col-sm-6">
+      	<input type="textbox" class="form-control" id="eid" [(ngModel)]="eid" placeholder="Enter  your id" name="eid">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class ="control-label col-sm-2" for="sal" >Basic Sal:</label>
+      <div class="col-sm-6">
+      	<input type="textbox" class="form-control" id="sal" [(ngModel)]="sal" placeholder="Enter salary" name="sal">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class ="control-label col-sm-2" for="hra" >HRA:</label>
+      <div class="col-sm-6">
+      	<input type="textbox" class="form-control" id="hra" [(ngModel)]="hra" placeholder="Enter  hra" name="hra">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class ="control-label col-sm-2" for="DA" > DA:</label>
+      <div class="col-sm-6">
+      	<input type="textbox" class="form-control" id="DA" [(ngModel)]="DA" placeholder="Enter  DA" name="DA">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class ="control-label col-sm-2" for="ded" > Deductions:</label>
+      <div class="col-sm-6">
+      	<input type="textbox" class="form-control" id="ded" [(ngModel)]="ded" placeholder="Enter  deductions" name="ded">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class ="control-label col-sm-2" for="tax" > TAX :</label>
+      <div class="col-sm-6">
+      	<input type="textbox" class="form-control" id="tax" [(ngModel)]="tax" placeholder="Enter  you id" name="tax">
+      </div>
+    </div>
+    <div class="form-group form-check">
+      <label class="form-check-label">
+        <input class="form-check-input" type="checkbox" name="remember"> Remember me
+      </label>
+    </div>
+    <button type="submit" class="btn btn-primary" name ="Submit">Submit</button>
+  </form>
+</div>
+
+------------------------------------------Template Form : for DataValidation in html ie at client site-----------------------------------
+--> 
+<!--
+<div class="container">
+
+ <h2>Your form !! <i class="fa fa-hand-o-left" style="font-size:48px;color:red"></i> Please enter your details.</h2>
+  <form #f1 ="ngForm"   method="get" (ngSubmit)="test1()" class ="horizontal-form">
+    <div class="form-group">
+      <label class ="control-label col-sm-2" for="id1" > ID :</label>
+      <div class="col-sm-6">
+      	<input type="text" class="form-control" id="id1" [(ngModel)]="id1" placeholder="Enter your id" name="id1" #uid1="ngModel" required minlength="4">
+      </div>
+    </div>
+
+    <div *ngIf="f1.submitted && uid1.invalid">
+      <div *ngIf="uid1.errors.required">Id is required</div>
+    </div>    
+    <div *ngIf="f1.submitted && uid1.invalid">
+      <div *ngIf="uid1.errors.minlength">Id is atleast of length 4</div>
+    </div>
+    <button type="submit" class="btn btn-primary" name ="Submit">Submit</button>
+  </form> 
+</div>
+-->
+<!--
+        ------------------ Normal Form --2 way databinding ---
+<h1>All details are in here also</h1>
+<p>Name = {{name}}</p>
+<p>Id = {{eid}}</p>
+
+<p>Sal = {{sal}}</p>
+<p>HRA = {{hra}}</p>
+<p>DA = {{DA}}</p>
+<p>TAX = {{tax}}</p>
+
+<p>Deductions = {{ded}}</p>
+
+<p>Gross Salary= {{gs}}</p>
+-->
+
+<!--
+*///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+9//////////////////////////////////////////////////////////////////////////////////////////////
+-->
+
+
+
+
+<!--
+6488888888888888888888888888888888888888888888888888888888888888888888888888888888888888888
+
+
+
+    <div class="container  h-100">
+      
+
+
+
+
+
+
+      <div class="row h-100 justify-content-center align-items-center">
+        <div class="col-10 col-md-8 col-lg-6">
+      <h2> <B>Employee Management <i class="fa fa-hand-o-left" style="font-size:48px;color:red"></i></B> </h2>
+      <form #f ="ngForm"   method="get" (ngSubmit)="addEmp()" class ="horizontal-form">
+        <div class="form-group">
+          <label class ="control-label col-sm-2" for="name" > Name :</label>
+          <div class="col-sm-6">
+            <input type="textbox" class="form-control" id="ename" [(ngModel)]="ename" placeholder="Enter name" name="ename">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class ="control-label col-sm-2" for="id" >ID :</label>
+          <div class="col-sm-6">
+            <input type="textbox" class="form-control" id="eid" [(ngModel)]="eid" placeholder="Enter id" name="eid">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class ="control-label col-sm-4" for="sal" >Basic Sal:</label>
+          <div class="col-sm-6">
+            <input type="textbox" class="form-control" id="sal" [(ngModel)]="esal" placeholder="Enter salary" name="esal">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class ="control-label col-sm-2" for="hra" >Department:</label>
+          <div class="col-sm-6">
+            <input type="textbox" class="form-control" id="dept" [(ngModel)]="edept" placeholder="Enter  Department" name="edept">
+          </div>
+        </div>
+        
+        <button type="submit" class="btn btn-primary" name ="Submit">Submit</button>
+      </form>
+    </div>
+  </div>
+
+-->
+
+
+
+
+<!-- Editable table -><div class="card">
+  <h3 class="card-header text-center font-weight-bold text-uppercase py-4">Employee Records</h3>
+-->
+<!-- Editable table ->
+<div class="card">
+  <h3 class="card-header text-center font-weight-bold text-uppercase py-4">Editable table</h3>
+  <div class="card-body">
+    <div id="table" class="table-editable">
+      <span class="table-add float-right mb-3 mr-2">
+        <a class="text-success" (click)="add()">
+          <span class="glyphicon glyphicon-plus"></span>jainho
+        </a>
+      </span>
+      <table id ="tableSortExample" class="table table-bordered table-responsive table-striped text-center">
+        <thead>
+
+          <th *ngFor="let head of headElements; let i = index" aria-controls="tableSortExample"
+           scope="col" [mdbTableSort]="elements" [sortBy]="headElements[i]">{{head | titlecase}}
+            <mdb-icon fas icon="sort"></mdb-icon>
+          </th>  
+
+          <th class="text-center" *ngFor="let head of headElements; let i = index" aria-controls="tableSortExample"
+          scope="col" [mdbTableSort]="elements" [sortBy]="headElements[i]">{{head | titlecase}}
+        <span class="fas fa-sort"></span>
+        </th>-->
+<!--
+        </thead>
+        <tr *ngFor="let person of empdata; let id = index">
+          <td>
+            <span (keyup)="changeValue( $event)" (blur)="updateList(id, 'eid', $event)" contenteditable="true">{{person.eid}}</span>
+          </td>
+          <td>
+            <span contenteditable="true" (keyup)="changeValue( $event)" (blur)="updateList(id, 'ename', $event)">{{person.ename}}</span>
+          </td>
+          <td>
+            <span contenteditable="true" (keyup)="changeValue( $event)" (blur)="updateList(id, 'esal', $event)">{{person.esal}}</span>
+          </td>
+          <td>
+            <span contenteditable="true" (keyup)="changeValue( $event)" (blur)="updateList(id, 'edept', $event)">{{person.edept}}</span>
+          </td>
+          <td>
+          Jai ho  
+          </td>
+          <td>
+            <span class="table-remove">
+              <button type="button" mdbBtn color="danger" rounded="true" size="sm" class="my-0" (click)="removeEmp(person)">Remove</button>
+            </span>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>-->
+<!-- Editable table -->
+<!-- Editable table --> 
+ 
+ <!-- Editable table -><div class="card">
+  <h3 class="card-header text-center font-weight-bold text-uppercase py-4">Employee Records</h3>
+ -->
+<!-- Editable table -->
+<!--<div class="card">
+  <h3 class="card-header text-center font-weight-bold text-uppercase py-4">Editable table</h3>
+  <div class="card-body">
+    <div id="table" class="table-editable">
+      <span class="table-add float-right mb-3 mr-2">
+        <a class="text-success" (click)="add()">
+          <span class="glyphicon glyphicon-plus"></span>jainho
+        </a>
+      </span>
+      <table class="table table-bordered table-responsive table-striped text-center">
+        <tr>
+          <th class="text-center">Id </th>
+          <th class="text-center">Name</th>
+          <th class="text-center">Salary</th>
+          <th class="text-center">Department</th>
+          <th class="text-center">Edit</th>
+          <th class="text-center">Delete</th>
+        </tr>
+        <tr *ngFor="let person of empdata; let id = index">
+          <td>
+            <span (keyup)="changeValue( $event)" (blur)="updateList(id, 'eid', $event)" contenteditable="true">{{person.eid}}</span>
+          </td>
+          <td>
+            <span contenteditable="true" (keyup)="changeValue( $event)" (blur)="updateList(id, 'ename', $event)">{{person.ename}}</span>
+          </td>
+          <td>
+            <span contenteditable="true" (keyup)="changeValue( $event)" (blur)="updateList(id, 'esal', $event)">{{person.esal}}</span>
+          </td>
+          <td>
+            <span contenteditable="true" (keyup)="changeValue( $event)" (blur)="updateList(id, 'edept', $event)">{{person.edept}}</span>
+          </td>
+          <td>
+          Jai ho  
+          </td>
+          <td>
+            <span class="table-remove">
+              <button type="button" mdbBtn color="danger" rounded="true" size="sm" class="my-0" (click)="remove(id)">Remove</button>
+            </span>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+ 
+-->
+ <!--*******************************************************>
+ 
+  <div class="card-body">
+    <div id="table" class="table-editable">
+    --><!--
+      <span class="table-add float-right mb-3 mr-2"><a href="#!" class="text-success"><i
+            class="fas fa-plus fa-2x" aria-hidden="true"></i></a></span>-->
+        <!--<table class="table table-bordered table-responsive-md table-striped text-center">
+        <thead>
+          <tr>
+            <th class="text-center">Id </th>
+            <th class="text-center">Name</th>
+            <th class="text-center">Salary</th>
+            <th class="text-center">Department</th>
+            <th class="text-center">Edit</th>
+            <th class="text-center">Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of empdata">
+            <td class="pt-3-half" contenteditable="true">{{user.eid}}</td>
+            <td class="pt-3-half" contenteditable="true">{{user.ename}}</td>
+            <td class="pt-3-half" contenteditable="true">{{user.esal}}</td>
+            <td class="pt-3-half" contenteditable="true">{{user.edept}}</td>
+          -->     <!--Literally Comments^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^6666666666666
+                **************************************************************************************
+                <td class="pt-3-half">
+              <span class="table-up"><a href="#!" class="indigo-text"><i class="fas fa-long-arrow-alt-up"
+                    aria-hidden="true"></i></a></span>
+              <span class="table-down"><a href="#!" class="indigo-text"><i class="fas fa-long-arrow-alt-down"
+                    aria-hidden="true"></i></a></span>
+            </td>
+          --> <!--   Literally Comments ENDS^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^6666666666666
+                **************************************************************************************
+              -->
+          
+          <!--<td>
+              <span class="table-remove"><button type="button"
+                  class="btn btn-danger btn-rounded btn-sm my-0">Edit</button></span>
+            </td>
+            <td>
+                  <span class="table-remove"><button type="button" (click)="removeEmp(user)"
+                  class="btn btn-danger btn-rounded btn-sm my-0">Delete</button></span>
+            </td>
+          </tr>
+          
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+    </div>
+ </div>
+
+
+
+ /********************************************************************************************************
+ 
+ /********************************************************************************************************
+
+                                   PREVIOUS LAB ENDS 
+
+ /********************************************************************************************************
+ 
+ /********************************************************************************************************
+-->
+  
+  
+  
+  -->
+</body>
+</html>
